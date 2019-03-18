@@ -1,0 +1,67 @@
+
+EXAM QUESTIONS
+
+NOTE:  All containers created should be UP and RUNNING 
+
+1	Create a container named myserver from the mysql image . The version of the image tag used should be 5.7  .  The container traffic at port 3306 should be forwarded to the host port at 8889.
+
+2	Create a container named nginxhost from the image nginx . The container’s memory should not exceed 300m . 
+
+
+3	Create your first Blog post using wordpress.
+Deploy Wordpress application along with a mariadb database :-
+
+	The wordpress application should be published at the host port 8002
+	The name of the wordpress container should be wordpress
+	You need to pass the database password via environment variable to establish connection to the database service . You can use  WORDPRESS_DB_PASSWORD as variable name.
+	The wordpress app should be able to communicate back and forth with the mariadb database via the alias name mysql   .
+
+
+Database details:-
+        The database data should be persistent in the host path /mariadb . 
+              HINT: You can use bind mount for that 
+	The password for the mariadb should be set to MyPassword
+	The database name should be set to wordpress
+	The name of the container should be set to wordpressdb
+
+Following environment variables can be used for setting password and database name :
+	MYSQL_ROOT_PASSWORD
+	MYSQL_DATABASE
+
+
+
+After deploying both services, create your first blog post 
+	Create Username and password  with below details 
+
+	Site Title: KickOps
+	Username: docker
+	Password: ABCDefgh123!!
+	email : exam@kickops.com
+
+
+
+Create a new blog post :- 
+	Blog Title : My First Blog!!
+	Text in the block : This is my first blog to prove that i have successfully deployed both the containers
+
+
+4	Create a container named httpserver out of the image webhost:exam and attach to the network examnetwork. The container should be published on the host port 9080 .
+
+
+5	Create a new network named examnetwork
+
+
+6	Create a new docker image named webhost with the tag version exam with the below instructions. 
+	The images should be extended from centos . 
+	Install the package httpd 
+	The container should be listening on port 80
+	The first command on container run should be  /usr/sbin/httpd –DFOREGROUND
+	The Default web page should show 'Welcome to KickOps default page!  Hurray!!'
+	The location of index.html file is /var/www/html/index.html
+
+7	Login to the container httpserver and manually edit the index.html file with the below contents.
+“This is the modified page”
+Save this as a new image called modweb and tag that image as 1.0
+
+
+
